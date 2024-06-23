@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stocks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .add-stock {
+            display: flex;
+            align-items: center;
+        }
+        .add-stock input {
+            margin-right: 10px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: green;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+			text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="ORDER.html">Home</a>
+        <h1 style=margin-right:700px>Stocks</h1>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Available Stock</th>
+                <th>Add Stock</th>
+            </tr>
+        </thead>
+        <tbody id="stockTableBody">
+            <!-- Stock data will be added dynamically using JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        const stockTableBody = document.getElementById('stockTableBody');
+
+        function updateStockTable() {
+            stockTableBody.innerHTML = '';
+            const stockData = JSON.parse(localStorage.getItem('stockData')) || [];
+
+            stockData.forEach((product, index) => {
+                const row = document.createElement('tr');
+
+                const nameCell = document.createElement('td');
+                nameCell.textContent = product.name;
+                row.appendChild(nameCell);
+
+                const priceCell = document.createElement('td');
+                priceCell.textContent = product.price;
+                row.appendChild(priceCell);
+
+                const stockCell = document.createElement('td');
+                stockCell.textContent = product.stock;
+                row.appendChild(stockCell);
+
+                const addStockCell = document.createElement('td');
+                const addStockInput = document.createElement('input');
+                addStockInput.type = 'number';
+                addStockInput.min = '0';
+                addStockInput.value = '0';
+                addStockInput.dataset.index = index;
+
+                // Store the previous value of the input
+                let prevValue = 0;
+                addStockInput.addEventListener('focus', () => {
+                    prevValue = parseInt(addStockInput.value);
+                });
+
+                const addStockButton = document.createElement('button');
+                addStockButton.textContent = 'Add';
+                addStockButton.addEventListener('click', () => {
+                    const quantityToAdd = parseInt(addStockInput.value);
+                    if (quantityToAdd > 0) {
+                        product.stock += quantityToAdd;
+                        localStorage.setItem('stockData', JSON.stringify(stockData));
+                        updateStockTable();
+                    } else {
+                        // If the input is empty or 0, revert to the previous value
+                        addStockInput.value = prevValue.toString();
+                    }
+                });
+                addStockCell.appendChild(addStockInput);
+                addStockCell.appendChild(addStockButton);
+                row.appendChild(addStockCell);
+
+                stockTableBody.appendChild(row);
+            });
+        }
+
+        updateStockTable();
+
+        // Update stock table every 5 seconds to reflect any changes
+        setInterval(updateStockTable, 5000);
+    </script>
+</body>
+</html>

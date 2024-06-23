@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Restaurant Menu</title>
+    <style>
+       body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url("bgg.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+            max-height: 90vh;
+            margin-top: 50px; /* Adjusted margin to accommodate the fixed navbar */
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: white;
+        }
+
+        button {
+            padding: 5px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 25px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        section {
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            background-color: grey;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+
+        #receipt {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cont">
+            <nav>
+                <center>
+                    <a href="#maindish"><button>Main Dish</button></a>
+                    <a href="#vegetables"><button>Vegetables</button></a>
+                    <a href="#desserts"><button>Desserts</button></a>
+                    <a href="#drinks"><button>Drinks</button></a>
+                    <a href="#specials"><button>Add ons</button></a>
+                    <a href="Index.html"><button>Back</button></a>
+                </center>
+            </nav>
+        </div>
+        <div class="table">
+            <section id="maindish">
+                <center><h2>Main Dish</h2></center>
+                <table>
+                    <tr>
+                        <th>Menu</th>
+                        <th>Name of Dish</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td><img src="md1.jpg" width="180" height="180"><br><input type="checkbox" id="Honey-Garlic Chicken" name="Honey-Garlic Chicken" value="Honey-Garlic Chicken"></td>
+                        <td>Honey-Garlic Chicken</td>
+                        <td>Php 700.00<br><input type="number" id="Honey-Garlic ChickenQty" value="0" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="md2.jpg" width="180" height="180"><br><input type="checkbox" id="Pan-Seared Strip Steaks" name="Pan-Seared Strip Steaks" value="Pan-Seared Strip Steaks"></td>
+                        <td>Pan-Seared Strip Steaks</td>
+                        <td>Php 1,250.00<br><input type="number" id="Pan-Seared Strip SteaksQty" value="0" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="md3.jpg" width="180" height="180"><br><input type="checkbox" id="Pork Tenderloin with Apples" name="Pork Tenderloin with Apples" value="Pork Tenderloin with Apples"></td>
+                        <td>Pork Tenderloin with Apples</td>
+                        <td>Php 850.00<br><input type="number" id="Pork Tenderloin with ApplesQty" value="0" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="md4.jpg" width="180" height="180"><br><input type="checkbox" id="Oven Baked Chicken Drumstick" name="Oven Baked Chicken Drumstick" value="Oven Baked Chicken Drumstick"></td>
+                        <td>Oven Baked Chicken Drumstick</td>
+                        <td>Php 900.00<br><input type="number" id="Oven Baked Chicken DrumstickQty" value="0" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="md5.jpg" width="180" height="180"><br><input type="checkbox" id="Smothered Pork Chops" name="Smothered Pork Chops" value="Smothered Pork Chops"></td>
+                        <td>Smothered Pork Chops</td>
+                        <td>Php 1,350.00<br><input type="number" id="Smothered Pork ChopsQty" value="0" min="0"></td>
+                    </tr>
+                </table>
+            </section>
+            <section id="vegetables">
+                <center><h2>Vegetables</h2></center>
+                <table>
+                    <tr>
+                        <th>Menu</th>
+                        <th>Name of Dish</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td><img src="vg1.jpg" width="180" height="180"><br><input type="checkbox" id="Pinakbet" name="Pinakbet" value="Pinakbet"></td>
+                        <td>Pinakbet</td>
+                        <td>Php 300.00<br><input type="number" id="PinakbetQty" value="0" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="vg2.jpg" width="180" height="180"><br><input type="checkbox" id="Chopsuey" name="Chopsuey" value="Chopsuey"></td>
+                        <td>Chopsuey</td>
+                        <td>Php 350.00<br><input type="number" id="ChopsueyQty" value="0" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="vg3.jpg" width="180" height="180"><br><input type="checkbox" id="Vegetable Tian" name="Vegetable Tian" value="Vegetable Tian"></td>
+                        <td>Vegetable Tian</td>
+                        <td>Php 500.00<br><input type="number" id="Vegetable TianQty" value="0" min="0"></td>
+                    </tr>
+                </table>
+            </section>
+            <section id="desserts">
+                <center><h2>Desserts</h2></center>
+                <table>
+                    <tr>
+                        <th>Menu</th>
+                        <th>Name of Dish</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td><img src="ds1.jpg" width="180" height="180"><br><input type="checkbox" id="Halo-Halo" name="Halo-Halo" value="Halo-Halo"></td>
+                        <td>Halo-Halo</td>
+                        <td>Php 150.00<br><input type="number" id="Halo-HaloQty" value="0" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="ds2.jpg" width="180" height="180"><br><input type="checkbox" id="Saging con Yelo" name="Saging con Yelo" value="Saging con Yelo"></td>
+                        <td>Saging con Yelo</td>
+                        <td>Php 120.00<br><input type="number" id="Saging con YeloQty" value="0" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="ds3.jpg" width="180" height="180"><br><input type="checkbox" id="Mais con Yelo" name="Mais con Yelo" value="Mais con Yelo"></td>
+                        <td>Mais con Yelo</td>
+                        <td>Php 130.00<br><input type="number" id="Mais con YeloQty" value="0" min="0"></td>
+                    </tr>
+                </table>
+            </section>
+            <section id="drinks">
+                <center><h2>Drinks</h2></center>
+                <table>
+                    <tr>
+                        <th>Menu</th>
+                        <th>Name of Dish</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td><img src="dr1.jpg" width="180" height="180"><br><input type="checkbox" id="Mango Shake" name="Mango Shake" value="Mango Shake"></td>
+                        <td>Mango Shake</td>
+                        <td>Php 150.00<br><input type="number" id="Mango ShakeQty" value="0" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="dr2.jpg" width="180" height="180"><br><input type="checkbox" id="Coke in can" name="Coke in can" value="Coke in can"></td>
+                        <td>Coke in can</td>
+                        <td>Php 60.00<br><input type="number" id="Coke in canQty" value="0" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="dr3.jpg" width="180" height="180"><br><input type="checkbox" id="Bottled Water" name="Bottled Water" value="Bottled Water"></td>
+                        <td>Bottled Water</td>
+                        <td>Php 30.00<br><input type="number" id="Bottled WaterQty" value="0" min="0"></td>
+                    </tr>
+                </table>
+            </section>
+            <section id="specials">
+                <center><h2>Add ons</h2></center>
+                <table>
+                    <tr>
+                        <th>Menu</th>
+                        <th>Name of Dish</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td><img src="ao.jpg" width="180" height="180"><br><input type="checkbox" id="Riped Mango" name="Riped Mango" value="Riped Mango"></td>
+                        <td>Riped Mango</td>
+                        <td>Php 100.00<br><input type="number" id="Riped MangoQty" value="0" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="ao2.jpg" width="180" height="180"><br><input type="checkbox" id="Fried Egg" name="Fried Egg" value="Fried Egg"></td>
+                        <td>Fried Egg</td>
+                        <td>Php 20.00<br><input type="number" id="Fried EggQty" value="0" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="ao3.jpg" width="180" height="180"><br><input type="checkbox" id="Steamed Rice" name="Steamed Rice" value="Steamed Rice"></td>
+                        <td>Steamed Rice</td>
+                        <td>Php 30.00<br><input type="number" id="Steamed RiceQty" value="0" min="0"></td>
+                    </tr>
+                </table>
+            </section>
+            <div class="btn">
+                <button onclick="computeTotal()">Compute</button>
+            </div>
+            <div id="receipt">
+                <h2>Receipt</h2>
+                <p id="receiptDetails"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function computeTotal() {
+            let total = 0;
+            let receiptDetails = '';
+            let items = [
+                { id: 'Honey-Garlic Chicken', price: 700 },
+                { id: 'Pan-Seared Strip Steaks', price: 1250 },
+                { id: 'Pork Tenderloin with Apples', price: 850 },
+                { id: 'Oven Baked Chicken Drumstick', price: 900 },
+                { id: 'Smothered Pork Chops', price: 1350 },
+                { id: 'Pinakbet', price: 300 },
+                { id: 'Chopsuey', price: 350 },
+                { id: 'Vegetable Tian', price: 500 },
+                { id: 'Halo-Halo', price: 150 },
+                { id: 'Saging con Yelo', price: 120 },
+                { id: 'Mais con Yelo', price: 130 },
+                { id: 'Mango Shake', price: 150 },
+                { id: 'Coke in can', price: 60 },
+                { id: 'Bottled Water', price: 30 },
+                { id: 'Riped Mango', price: 100 },
+                { id: 'Fried Egg', price: 20 },
+                { id: 'Steamed Rice', price: 30 }
+            ];
+
+            items.forEach(item => {
+                let checkbox = document.getElementById(item.id);
+                let qty = document.getElementById(item.id + 'Qty');
+                if (checkbox.checked && qty.value > 0) {
+                    let itemTotal = item.price * qty.value;
+                    total += itemTotal;
+                    receiptDetails += `${item.id} - Php ${item.price.toFixed(2)} x ${qty.value} = Php ${itemTotal.toFixed(2)}<br>`;
+                }
+            });
+
+            receiptDetails += `<strong>Total Amount: Php ${total.toFixed(2)}</strong>`;
+            document.getElementById('receiptDetails').innerHTML = receiptDetails;
+        }
+    </script>
+</body>
+</html>

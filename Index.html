@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Final Project</title>
+    <link rel="stylesheet" href="Index.css">
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1 id="hero-text"></h1>
+    </div>
+    <main>
+        <section class="events">
+            <article class="event">
+                <img src="Ordering.png" alt="Night Laser Show">
+                <div class="event-info">
+                    <h2>Ordering System</h2>
+                    <p>Welcome to our Sari-Sari Store Ordering System! Simplify your ordering process and manage all your needs with ease. Start using our system now!</p>
+                    <a href="PR.html" class="see-more">See more...</a>
+                </div>
+            </article>
+            <article class="event">
+                <img src="MyCV.png" alt="DJ - Master Class">
+                <div class="event-info">              
+                    <h2>My Certificate of Registration</h2>
+                    <p>Explore my custom COR! Easily view and manage your Certificate of Registration details with our user-friendly HTML design.</p>
+                    <a href="COR.HTML" class="see-more">See more...</a>
+                </div>
+            </article>
+            <article class="event">
+                <img src="Practical.png" alt="Live Music">
+                <div class="event-info">
+                    <h2>Ordering and Stock Management</h2>
+                    <p>Manage your Sari-Sari Store with ease! Our HTML template helps you efficiently order and manage your stock, ensuring your shelves are always full and your business runs smoothly.</p>
+                    <a href="ORDER.html" class="see-more">See more...</a>
+                </div>
+            </article>
+            <article class="event">
+                <img src="Resume.png" alt="My Resume">
+                <div class="event-info">
+                    <h2>My Resume with Bootstrap</h2>
+                    <p>Discover my professional journey with this sleek, Bootstrap-powered resume template! Designed for clarity and impact, it showcases my skills, experience, and achievements in a visually appealing and responsive layout.</p>
+                    <a href="Act1.html" class="see-more">See more...</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const text = '"My HTML Portfolio: A Compilation of my Web Development Activities"';
+            let index = 0;
+            const speed = 100; // Speed of typing in milliseconds
+
+            function typeWriter() {
+                if (index < text.length) {
+                    document.getElementById('hero-text').innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+
+            typeWriter();
+        });
+    </script>
+	</div>
+</body>
+</html>

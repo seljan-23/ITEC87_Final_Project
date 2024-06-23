@@ -1,0 +1,92 @@
+body{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+	max-width: 1100px;
+	height: 1330px;
+	margin: 100px auto;
+	background: white;
+	box-shadow: 5px 21px 20px 20px #3d3f4238;
+	padding: 50px;
+}
+
+.back-button {
+            background-color: maroon;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px;
+            display: inline-block;
+}
+		
+.top {
+	margin-top: -120px;
+	color: maroon;
+	text-align: center;
+	font-size: 20px;
+	
+}
+.top .cct {
+	padding-left: 70px;
+}
+.logo{
+	margin-top: -100px;
+}
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+  background-color: white;
+  width: 100%;
+  border:1px solid maroon;
+}
+.head {
+	color: white;
+	background-color: maroon;
+}
+table.info{
+	border-collapse: collapse;
+    
+}
+table.info td, table.info th {
+	padding: 5px;
+    text-align: left;
+    border: 0px solid transparent;
+	
+}
+
+table.hello{
+	border-collapse: collapse;
+    
+}
+table.hello td, table.hello th {
+	padding: 5px;
+    text-align: center;
+    border: 1px solid maroon;
+}
+
+.content{
+text-align: left;
+}
+.head2 {
+	background-color: yellow;
+	width:100%;
+	text-align: center;
+}
+
+.head3 {
+	color: white;
+	background-color: maroon;
+}
+
+span{
+	color:black;
+	font-weight: bold;
+	margin-left: 5%;
+}
+
+.head4 {
+	color: maroon;
+	margin-top:20px;
+}
